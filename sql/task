@@ -1,0 +1,31 @@
+-- Create table
+CREATE TABLE employee (
+    empid INT PRIMARY KEY,
+    name VARCHAR(50),
+    email VARCHAR(100),
+    city VARCHAR(50),
+    designation VARCHAR(50)
+);
+
+-- Insert 20 records
+INSERT INTO employee (empid, name, email, city, designation) VALUES
+(1, 'Amit Sharma', 'amit.sharma@example.com', 'Mumbai', 'Software Engineer'),
+(2, 'Neha Patel', 'neha.patel@example.com', 'Delhi', 'HR Manager'),
+(3, 'Rohit Verma', 'rohit.verma@example.com', 'Pune', 'Web Developer'),
+(4, 'Priya Singh', 'priya.singh@example.com', 'Bangalore', 'UI Designer'),
+(5, 'Karan Mehta', 'karan.mehta@example.com', 'Hyderabad', 'Project Manager'),
+(6, 'Sneha Desai', 'sneha.desai@example.com', 'Ahmedabad', 'QA Engineer'),
+(7, 'Vikas Nair', 'vikas.nair@example.com', 'Chennai', 'DevOps Engineer'),
+(8, 'Anjali Gupta', 'anjali.gupta@example.com', 'Kolkata', 'Software Tester'),
+(9, 'Manish Kumar', 'manish.kumar@example.com', 'Mumbai', 'Team Lead'),
+(10, 'Deepa Joshi', 'deepa.joshi@example.com', 'Delhi', 'Business Analyst'),
+(11, 'Saurabh Pandey', 'saurabh.pandey@example.com', 'Pune', 'Full Stack Developer'),
+(12, 'Ritu Kaur', 'ritu.kaur@example.com', 'Bangalore', 'HR Executive'),
+(13, 'Arjun Yadav', 'arjun.yadav@example.com', 'Hyderabad', 'Data Analyst'),
+(14, 'Pooja Reddy', 'pooja.reddy@example.com', 'Chennai', 'Backend Developer'),
+(15, 'Rajesh Iyer', 'rajesh.iyer@example.com', 'Kolkata', 'Network Engineer'),
+(16, 'Divya Bansal', 'divya.bansal@example.com', 'Mumbai', 'Marketing Manager'),
+(17, 'Nikhil Jain', 'nikhil.jain@example.com', 'Delhi', 'Frontend Developer'),
+(18, 'Meena Rao', 'meena.rao@example.com', 'Pune', 'Graphic Designer'),
+(19, 'Harsh Patel', 'harsh.patel@example.com', 'Bangalore', 'Cloud Architect'),
+(20, 'Komal Shah', 'komal.shah@example.com', 'Hyderabad', 'Database Administrator');

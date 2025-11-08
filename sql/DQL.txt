@@ -1,0 +1,24 @@
+SELECT * FROM `employee` WHERE city = "Mumbai" and projectid=101
+
+SELECT * FROM `employee` WHERE city = "Mumbai" or projectid=101
+
+
+SELECT * FROM `employee` WHERE  not city="mumbai"
+
+SELECT * FROM `employee` LIMIT 5
+
+SELECT * FROM `employee` LIMIT 5,5;
+
+SELECT * FROM `employee` WHERE city in ("Delhi","Pune");
+
+SELECT * FROM `employee` WHERE city not in ("Delhi","Pune");
+
+SELECT min(price) as MinPrice FROM `products` WHERE 1
+
+SELECT max(price) as MinPrice FROM `products` WHERE 1;
+
+SELECT sum(price) as totalPrice FROM `products` WHERE 1;
+
+SELECT avg(price) as AvgPrice FROM `products` WHERE 1;
+
+SELECT count(empid) as MumbaiEmp FROM `employee` WHERE city = "Mumbai"

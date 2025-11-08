@@ -1,0 +1,31 @@
+CREATE DATABASE aug07db
+
+use aug07db
+
+product:
+pid int primary key
+pname varchar(20)
+price float
+desc varchar
+
+CREATE TABLE products (pid int PRIMARY KEY AUTO_INCREMENT,pname varchar(100),price float,desciption varchar(100))
+
+
+ALTER TABLE products add category int;
+
+ALTER TABLE products CHANGE category catid int;
+
+ALTER TABLE products DROP COLUMN catid;
+
+DROP TABLE products
+
+
+CREATE TABLE users(uid int PRIMARY KEY AUTO_INCREMENT,username varchar(100),email varchar(200),contact varchar(20))
+
+
+INSERT INTO users(username,email,contact)VALUES('jagdish','j@gmail.com','898989898');
+INSERT INTO users(username,email,contact)VALUES('chetan','chetan@gmail.com','898989898');
+INSERT INTO users(username,email,contact)VALUES('vrujal','v@gmail.com','898989898');
+INSERT INTO users(username,email,contact)VALUES('asish','a@gmail.com','898989898');
+
+CREATE TABLE cart(cartid int PRIMARY KEY AUTO_INCREMENT,pid int,uid int,qty int ,timeofadd datetime ,FOREIGN KEY (pid) REFERENCES products(pid),FOREIGN KEY (uid) REFERENCES users(uid));

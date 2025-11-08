@@ -1,0 +1,16 @@
+INSERT INTO products(pname,price,desciption)VALUES("Laptop","290000","test des")
+
+
+UPDATE products set price =30000 WHERE pid=1;
+
+DELETE FROM products WHERE pid=1
+
+SELECT pname  FROM `products` WHERE 1
+
+SELECT * FROM `products` WHERE pid=5
+
+SELECT DISTINCT(pname) FROM `products` 
+
+SELECT * FROM `products` ORDER BY pname ASC
+
+SELECT * FROM `products` ORDER BY pname DESC;
