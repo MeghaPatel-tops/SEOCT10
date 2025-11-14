@@ -22,3 +22,152 @@ SELECT sum(price) as totalPrice FROM `products` WHERE 1;
 SELECT avg(price) as AvgPrice FROM `products` WHERE 1;
 
 SELECT count(empid) as MumbaiEmp FROM `employee` WHERE city = "Mumbai"
+
+=========================join============================
+SELECT * FROM employee JOIN project ON employee.projectid = project.projectid
+
+SELECT * FROM employee left JOIN project ON employee.projectid = project.projectid 
+
+SELECT * FROM employee Right JOIN project ON employee.projectid = project.projectid 
+
+SELECT * FROM  employee JOIN project
+
+SELECT COUNT(empid) as TotalEmployee,projectid FROM employee GROUP BY projectid;
+
+SELECT sum(salary) as projectwisesalary,projectid FROM employee GROUP BY projectid;
+
+
+SELECT sum(salary) as projectwisesalary,projectid FROM employee GROUP BY projectid HAVING projectwisesalary > 50000;
+
+
+===========================procedure=================================
+ CREATE PROCEDURE getEmployee()
+ SELECT * FROM employee
+
+ CALL getEmployee();
+
+ CREATE PROCEDURE getEmpById(id int)
+SELECT * from employee where empid=id
+
+call getEmpById(3)
+========================View ==================================
+CREATE view empview as SELECT name,employee.projectid,projectname,deptname from employee join project on employee.projectid = project.projectid join department on employee.deptid = department.deptid
+
+SELECT * FROM empview;
+
+============================trigger=============================
+CREATE TRIGGER emptri
+AFTER UPDATE ON employee
+FOR EACH ROW
+
+INSERT INTO temptable(empid,timeofevent)VALUES(new.empid,now());
+
+======================Transcation========================
+START TRANSACTION;
+DELETE FROM users where uid=5;
+
+
+COMMIT;
+========================Savepoint==========================
+START TRANSACTION;
+
+SAVEPOINT sp1;
+INSERT INTO users(username,email,contact)VALUES("testuser","test@example.com",909099090);
+
+SAVEPOINT sp2;
+UPDATE users set email="t@gmail.com" where uid=4;
+
+SAVEPOINT sp3;
+DELETE FROM users where uid=4;
+
+ROLLBACK to sp2;
+
+COMMIT;
+=============================pl/sql============================
+DECLARE
+  message varchar2(100):= 'Hello, World!'; 
+  num1 number:=10;
+  num2 number:=2;
+  num3 number;
+BEGIN 
+  dbms_output.put_line(message); 
+  num3:= num1/num2;
+  
+ EXCEPTION
+    WHEN ZERO_DIVIDE THEN
+        DBMS_OUTPUT.PUT_LINE('Error: Division by zero is not allowed.');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('An unexpected error occurred.');
+END;
+/
+====================pl/sql if-else======================
+DECLARE
+  num number:=11;
+
+BEGIN 
+  if num >=18
+  then
+      dbms_output.put_line('elegible');
+  else
+      dbms_output.put_line('not elegible');
+  end if;    
+
+
+END;
+/
+==================while loop============================
+DECLARE
+  i number:=1;
+
+BEGIN 
+     while i<=10 loop 
+          dbms_output.put_line('i='||i);
+          i:= i+1;
+      end loop;    
+
+
+END;
+/
+
+
+======================for loop=======================
+DECLARE
+  i number:=1;
+
+BEGIN 
+      for i in 1..6 loop
+                dbms_output.put_line('i='||i);
+      END loop;
+      
+
+
+END;
+/
+
+
+=========================cursur=======================
+DELIMITER $$
+
+CREATE PROCEDURE empSalray1()
+BEGIN
+  DECLARE done int DEFAULT false;
+  DECLARE emp_id int;
+  DECLARE emp_salary int;
+  
+  DECLARE empCur CURSOR for SELECT empid,salary from employee;
+  
+  
+  DECLARE CONTINUE HANDLER for not found set done =true;
+  
+  OPEN empCur;
+  readEmp:LOOP
+      FETCH empCur INTO emp_id,emp_salary;
+      IF done THEN
+         LEAVE readEmp;
+        
+   end if;
+       update employee set salary = emp_salary+500 where empid = emp_id;
+   END LOOP;
+   CLOSE empCur;
+   END $$;
+   DELIMITER ;

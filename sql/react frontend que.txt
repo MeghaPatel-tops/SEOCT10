@@ -1,0 +1,87 @@
+What is React?
+→ Explain that React is a JavaScript library for building user interfaces, developed by Facebook.
+
+What are components in React?
+→ Components are reusable building blocks of UI in React — can be functional or class-based.
+
+What is JSX?
+→ JSX (JavaScript XML) allows writing HTML inside JavaScript.
+
+Difference between class and functional components?
+
+What are props in React?
+→ Props (short for properties) are used to pass data from parent to child components.
+
+What is state in React?
+→ State is a built-in object used to hold dynamic data in a component.
+
+Difference between state and props?
+
+How do you handle events in React?
+→ Using event handlers like onClick, onChange, etc.
+
+What is the purpose of key prop in React lists?
+
+What are fragments in React?
+→ Used to group elements without adding extra nodes to the DOM.
+
+🟡 Intermediate React Interview Questions
+
+What is the Virtual DOM?
+→ A lightweight representation of the real DOM; React updates only the changed parts efficiently.
+
+How does React reconciliation work?
+
+Explain the React lifecycle methods.
+→ For class components: componentDidMount, componentDidUpdate, componentWillUnmount.
+→ For functional components: useEffect hooks replace them.
+
+What are React Hooks? Name some commonly used hooks.
+→ useState, useEffect, useContext, useRef, useMemo, useCallback.
+
+What is useEffect used for?
+→ Handling side effects like fetching data, subscriptions, or timers.
+
+What is the difference between useEffect and useLayoutEffect?
+
+What is the Context API in React?
+→ Used for global state management (like passing data without props drilling).
+
+How do you optimize performance in a React app?
+→ Using React.memo, useMemo, useCallback, lazy loading, and code splitting.
+
+What is React Router? How do you implement routing?
+
+What is prop drilling and how do you avoid it?
+
+🔵 Advanced React Interview Questions
+
+What are controlled and uncontrolled components?
+
+Explain higher-order components (HOC).
+
+What are render props in React?
+
+What is lazy loading and Suspense in React?
+
+What is server-side rendering (SSR)? How is it done in Next.js?
+
+What is hydration in React 18?
+
+What is the difference between Redux and Context API?
+
+Explain Redux architecture.
+
+What is the difference between useMemo and useCallback?
+
+What are error boundaries in React?
+
+Explain concurrent rendering in React 18.
+
+What are custom hooks and why do we use them?
+
+What is the difference between useRef and createRef?
+
+How do you handle API calls in React?
+
+Explain React’s rendering process and batching.
